@@ -46,6 +46,16 @@ const shapes = {
     </>
   ),
   chevron: <path d="M9 5 L16 12 L9 19" />,
+  chevronDown: <path d="M6 9 L12 15 L18 9" />,
+  back: <path d="M15 5 L8 12 L15 19" />,
+  arrow: <path d="M5 12 H19 M13 6 L19 12 L13 18" />,
+  check: <path d="M5 12 L10 17 L19 7" />,
+  note: (
+    <>
+      <path d="M6 3 H15 L19 7 V21 H6 Z" />
+      <path d="M9 11 H16 M9 15 H14" />
+    </>
+  ),
   plus: <path d="M12 5 V19 M5 12 H19" />,
 }
 

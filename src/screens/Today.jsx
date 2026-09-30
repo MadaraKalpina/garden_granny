@@ -18,6 +18,7 @@ export default function Today() {
     <Screen
       background="var(--yellow)"
       title="Today"
+      hasBar
       action={
         // TODO: no design yet for what the bell opens.
         <button type="button" className="round-button" aria-label="Notifications">

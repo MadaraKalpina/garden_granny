@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Screen from '../components/Screen.jsx'
 import Heading from '../components/Heading.jsx'
 import Icon from '../components/Icon.jsx'
@@ -13,14 +14,15 @@ export default function MyGarden() {
   const count = demoPlants.length
 
   return (
-    <Screen background="var(--sage)" title="My garden">
+    <Screen background="var(--sage)" title="My garden" hasBar>
       <Heading first="My garden" second={`${count} ${count === 1 ? 'plant' : 'plants'} growing`} />
 
       <div className="garden-list">
-        {/* Cards become tappable in step 2, when the plant page exists. */}
         {demoPlants.map((plant, i) => (
-          <div
+          <Link
             key={plant.id}
+            // Seeds still in the packet get the countdown screen instead of the plant page.
+            to={plant.stage === 'packet' ? `/seeds/${plant.id}` : `/plant/${plant.id}`}
             className="garden-card"
             style={{
               background: cardColors[i % cardColors.length],
@@ -42,7 +44,7 @@ export default function MyGarden() {
               <span className="garden-card-next">{plant.next}</span>
             </div>
             <Icon name="chevron" />
-          </div>
+          </Link>
         ))}
 
         {/* Add a plant does nothing yet. It comes with onboarding (steps 3 and 4). */}

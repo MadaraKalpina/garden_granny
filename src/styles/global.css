@@ -51,8 +51,20 @@ button {
   max-width: var(--app-width);
   min-height: 100dvh;
   margin: 0 auto;
-  /* Room for the floating bottom bar. */
+}
+
+/* Room for the floating bottom bar. */
+.screen.has-bar {
   padding-bottom: calc(120px + env(safe-area-inset-bottom));
+}
+
+.screen-dark {
+  color: var(--white);
+}
+
+.screen-dark .round-button {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .screen-top {
@@ -74,11 +86,13 @@ button {
 }
 
 .heading {
-  padding: 22px 24px 0;
-  font-size: 40px;
   font-weight: 600;
   line-height: 1.02;
   letter-spacing: -0.025em;
+}
+
+.heading-padded {
+  padding: 22px 24px 0;
 }
 
 .heading-second {
@@ -109,6 +123,119 @@ button {
   color: var(--white);
   font-size: 14px;
   font-weight: 700;
+}
+
+/* The big button at the end of a screen or card. */
+.big-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 58px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--white);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.big-button.is-light {
+  background: var(--white);
+  color: var(--ink);
+}
+
+/* A quieter choice under a big button. */
+.text-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.chip-dark {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.scallop {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.scallop > svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.scallop-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Plant name, place chip and a round picture, at the top of plant screens. */
+.plant-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px 24px 0;
+}
+
+.plant-head-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.plant-head-disc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Buttons pinned to the end of a screen that has no bottom bar. */
+.screen-end {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: auto;
+  padding: 16px 20px calc(28px + env(safe-area-inset-bottom));
 }
 
 .place {

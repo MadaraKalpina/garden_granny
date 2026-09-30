@@ -1,0 +1,147 @@
+.sow-method {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 20px 0;
+}
+
+.sow-method h2 {
+  padding-left: 4px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* Two-way switch: the chosen side turns black. */
+.segmented {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--white);
+}
+
+.segmented button {
+  flex: 1 1 0;
+  height: 48px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.segmented button[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.countdown-big {
+  font-size: 96px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+/* A word like "Today" needs to be smaller than a number to fit. */
+.countdown-big.is-word {
+  font-size: 60px;
+}
+
+.countdown-line {
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.countdown-date {
+  padding-top: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 12px 20px 0;
+  padding: 18px;
+  border-radius: var(--radius-panel);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.info-card h2 {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.sow-steps {
+  display: flex;
+  flex-direction: column;
+  margin: 16px 20px 0;
+  padding: 18px 18px 4px;
+  border-radius: var(--radius-panel);
+  background: var(--white);
+}
+
+.sow-step {
+  display: flex;
+  gap: 12px;
+}
+
+.sow-step-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 36px;
+}
+
+.sow-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.sow-step-line {
+  flex-grow: 1;
+  width: 2px;
+  min-height: 14px;
+  background: rgba(21, 21, 21, 0.2);
+}
+
+.sow-step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px 0 14px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.sow-step-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+}

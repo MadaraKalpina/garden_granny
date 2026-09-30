@@ -64,6 +64,28 @@ const drawings = {
       <path d="M24 12 C20 11 18 8 19 5 C22 5 24 8 24 12 Z" fill="#6DB36F" {...line} />
     </>
   ),
+  flowering: (
+    <>
+      <path d="M6 40 Q24 32 42 40 V44 H6 Z" fill="#C9955B" {...line} />
+      <path d="M24 38 V16" fill="none" {...line} />
+      <path d="M24 30 C16 32 11 27 12 22 C18 21 23 24 24 30 Z" fill="#6DB36F" {...line} />
+      <circle cx="24" cy="7" r="4" fill="#FFD166" {...line} />
+      <circle cx="31" cy="12" r="4" fill="#FFD166" {...line} />
+      <circle cx="17" cy="12" r="4" fill="#FFD166" {...line} />
+      <circle cx="20" cy="19" r="4" fill="#FFD166" {...line} />
+      <circle cx="28" cy="19" r="4" fill="#FFD166" {...line} />
+      <circle cx="24" cy="13" r="3.5" fill="#F3A9CF" {...line} />
+    </>
+  ),
+  fruiting: (
+    <>
+      <path d="M6 40 Q24 32 42 40 V44 H6 Z" fill="#C9955B" {...line} />
+      <path d="M24 38 V8" fill="none" {...line} />
+      <path d="M24 20 C32 22 37 17 36 12 C30 11 25 14 24 20 Z" fill="#6DB36F" {...line} />
+      <circle cx="17" cy="27" r="6" fill="#F06A4A" {...line} />
+      <circle cx="29" cy="30" r="5" fill="#A6D9A0" {...line} />
+    </>
+  ),
 }
 
 export default function PlantIcon({ name, size = 44 }) {

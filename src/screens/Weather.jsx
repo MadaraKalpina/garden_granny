@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Screen from '../components/Screen.jsx'
 import Heading from '../components/Heading.jsx'
 import Icon from '../components/Icon.jsx'
@@ -24,6 +25,7 @@ export default function Weather() {
     <Screen
       background="var(--blue)"
       title="Weather"
+      hasBar
       action={
         // TODO: no design yet for changing the city after onboarding.
         <button type="button" className="round-button" aria-label="Change city">
@@ -44,8 +46,7 @@ export default function Weather() {
         ))}
       </div>
 
-      {/* Becomes a link to the frost warning screen in step 2. */}
-      <div className="frost-pill">
+      <Link to="/frost" className="frost-pill">
         <div className="frost-pill-disc">
           <Icon name="frost" size={22} color="#151515" />
         </div>
@@ -54,7 +55,7 @@ export default function Weather() {
           <span className="frost-pill-detail">{demoFrost.detail}</span>
         </div>
         <Icon name="chevron" strokeWidth={2} />
-      </div>
+      </Link>
 
       <section className="watering">
         <h2>How watering changes</h2>

@@ -1,0 +1,83 @@
+.frost-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 24px 24px 0;
+}
+
+.frost-head-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.frost-intro {
+  padding: 12px 24px 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.frost-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 20px 0;
+}
+
+.frost-actions h2 {
+  padding: 0 4px 4px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Cards are pastel, so their text goes back to dark. */
+.frost-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: var(--radius-card);
+  color: var(--ink);
+}
+
+.frost-card-disc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.frost-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.frost-card-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.frost-note {
+  padding: 4px 6px 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
