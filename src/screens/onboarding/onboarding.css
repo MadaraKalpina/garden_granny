@@ -1,0 +1,393 @@
+/* Shared by the setup steps: city, plants, plant details, reminders. */
+
+.setup-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 24px 24px 0;
+  color: var(--ink-muted);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.setup-intro .heading,
+.setup-intro .chip {
+  color: var(--ink);
+}
+
+/* The small black circle with a tick that marks a picked item. */
+.check-disc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+/* ---------- Step 1: city ---------- */
+
+.city-search {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 20px 0;
+}
+
+.city-search label {
+  padding-left: 4px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.city-search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 52px;
+  padding: 0 18px;
+  border-radius: var(--radius-pill);
+  background: var(--white);
+}
+
+.city-search-box:focus-within {
+  outline: 2px solid var(--ink);
+}
+
+.city-search-box input {
+  flex-grow: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.city-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 16px 20px 0;
+  padding: 14px;
+  border-radius: var(--radius-panel);
+  background: var(--sage);
+}
+
+.city-list-title {
+  padding: 2px 6px 4px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.city-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+  padding: 0 12px 0 18px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.4);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.city-row[aria-pressed='true'] {
+  background: var(--white);
+  font-weight: 700;
+}
+
+.city-none {
+  padding: 4px 6px 6px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* ---------- Step 2: plants ---------- */
+
+.plant-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 20px 20px 0;
+}
+
+.plant-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 112px;
+  padding: 0;
+  /* Always a border, see-through until picked, so tiles don't jump in size. */
+  border: 2.5px solid transparent;
+  border-radius: var(--radius-card);
+  background: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.plant-tile[aria-pressed='true'] {
+  border-color: var(--ink);
+}
+
+/* On very narrow phones "Strawberries" would touch the tile edges. */
+@media (max-width: 350px) {
+  .plant-tile {
+    font-size: 13px;
+  }
+}
+
+.plant-tile-check {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+}
+
+/* ---------- Step 3: one plant ---------- */
+
+.setup-question {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 20px 0;
+}
+
+.setup-question h2 {
+  padding-left: 4px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.option-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 100px;
+  padding: 0 6px;
+  border: none;
+  border-radius: 24px;
+  background: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.option-tile.is-place {
+  height: 108px;
+}
+
+/* The picked option turns black with white text. */
+.option-tile[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.option-disc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.option-tile.is-place .option-disc {
+  width: 44px;
+  height: 44px;
+  background: var(--cream);
+}
+
+.option-tile.is-place[aria-pressed='true'] .option-disc {
+  background: var(--yellow);
+}
+
+/* ---------- Sowing pop-up ---------- */
+
+.sheet-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sheet-top-side {
+  width: var(--touch);
+}
+
+.sheet-close {
+  background: var(--white);
+}
+
+.sow-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sow-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 76px;
+  padding: 12px 14px 12px 12px;
+  border: none;
+  border-radius: var(--radius-card);
+  background: var(--white);
+  text-align: left;
+}
+
+.sow-option[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.sow-option-disc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--cream);
+}
+
+.sow-option[aria-pressed='true'] .sow-option-disc {
+  background: var(--yellow);
+}
+
+.sow-option-text {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.sow-option-text strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* The round "radio" mark on the right; filled with a yellow dot when picked. */
+.sow-option-radio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.sow-option[aria-pressed='true'] .sow-option-radio::after {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--yellow);
+  content: '';
+}
+
+.sow-hint {
+  padding: 12px 16px;
+  border-radius: 20px;
+  background: var(--yellow);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* ---------- Step 4: reminders ---------- */
+
+.reminders-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 20px 24px 0;
+}
+
+.reminders-intro {
+  padding: 10px 24px 0;
+  color: var(--ink-muted);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.reminders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 20px 0;
+}
+
+.reminder {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px 12px 12px;
+  border-radius: var(--radius-card);
+  background: var(--white);
+}
+
+.reminder-disc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+
+.reminder-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  color: var(--ink-muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.reminder-text strong {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.reminders-note {
+  padding: 4px 6px 0;
+  color: var(--ink-muted);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}

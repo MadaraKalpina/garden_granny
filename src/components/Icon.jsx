@@ -45,6 +45,21 @@ const shapes = {
       <circle cx="12" cy="9" r="2.5" />
     </>
   ),
+  roof: (
+    <>
+      <path d="M3 11 L12 4 L21 11" />
+      <path d="M6 10 V20 H18 V10" />
+      <path d="M10 20 V15 H14 V20" />
+    </>
+  ),
+  spade: <path d="M12 3 V13 M8 13 H16 L15 20 H9 Z" />,
+  search: (
+    <>
+      <circle cx="11" cy="11" r="6" />
+      <path d="M16 16 L20 20" />
+    </>
+  ),
+  close: <path d="M6 6 L18 18 M18 6 L6 18" />,
   chevron: <path d="M9 5 L16 12 L9 19" />,
   chevronDown: <path d="M6 9 L12 15 L18 9" />,
   back: <path d="M15 5 L8 12 L15 19" />,

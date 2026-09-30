@@ -197,3 +197,39 @@ export const demoFrostWarning = {
   ],
   note: 'Pumpkin is still in the packet, so nothing to do there.',
 }
+
+// The yellow hint in the "how will you sow?" pop-up. The designs only have
+// one for pumpkin; other plants show no hint until the knowledge base arrives.
+export const demoSowingHints = {
+  pumpkin: {
+    direct: 'Pumpkins go in the plot after the last frost. In Praha that’s from about 19 May.',
+    indoor: 'Sow indoors from mid-April. Plant out in the plot once frosts are over.',
+  },
+}
+
+// Example reminders shown on the "Can Granny nudge you?" screen.
+export const demoReminderExamples = [
+  {
+    plantId: 'pumpkin',
+    color: 'var(--yellow)',
+    title: 'Time to sow the pumpkin',
+    text: 'Frosts are over. Seeds go in the plot today',
+  },
+  {
+    plantId: 'tomatoes',
+    color: 'var(--peach)',
+    title: 'Move tomatoes to bigger pots',
+    text: 'Roots are poking out the bottom',
+  },
+  {
+    plantId: 'basil',
+    color: 'var(--sage)',
+    title: 'Water the basil',
+    text: 'Dry week ahead on your covered balcony',
+  },
+  {
+    frost: true,
+    title: 'Frost tonight in Praha',
+    text: 'Cover the radishes before dark',
+  },
+]

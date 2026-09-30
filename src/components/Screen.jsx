@@ -7,7 +7,17 @@ import Icon from './Icon.jsx'
 //   back   – where the back button goes (leave out for no back button)
 //   dark   – white text on a dark background (frost warning)
 //   hasBar – leave room at the bottom for the floating bottom bar
-export default function Screen({ background, title, back, action, dark = false, hasBar = false, children }) {
+//   header – set to false for a screen with no top row at all (welcome)
+export default function Screen({
+  background,
+  title,
+  back,
+  action,
+  dark = false,
+  hasBar = false,
+  header = true,
+  children,
+}) {
   // Paint the whole page too, so there are no odd-coloured edges on wide
   // displays or when the phone over-scrolls.
   useEffect(() => {
@@ -23,17 +33,19 @@ export default function Screen({ background, title, back, action, dark = false, 
 
   return (
     <div className={className} style={{ background }}>
-      <header className="screen-top">
-        <span className="screen-top-side">
-          {back && (
-            <Link to={back} className="round-button" aria-label="Back">
-              <Icon name="back" />
-            </Link>
-          )}
-        </span>
-        <span className="screen-top-title">{title}</span>
-        <span className="screen-top-side">{action}</span>
-      </header>
+      {header && (
+        <header className="screen-top">
+          <span className="screen-top-side">
+            {back && (
+              <Link to={back} className="round-button" aria-label="Back">
+                <Icon name="back" />
+              </Link>
+            )}
+          </span>
+          <span className="screen-top-title">{title}</span>
+          <span className="screen-top-side">{action}</span>
+        </header>
+      )}
       {children}
     </div>
   )

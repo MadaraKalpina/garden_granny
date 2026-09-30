@@ -2,7 +2,8 @@
 //   lobes – how many bumps around the edge
 //   depth – how deep the dips between bumps are (0 = a plain circle)
 //   tilt  – rotation in degrees
-export default function Scallop({ size, color, lobes = 12, depth = 0.18, tilt = 0, children }) {
+//   fluid – stretch to fill the parent instead of using `size` in px
+export default function Scallop({ size, color, lobes = 12, depth = 0.18, tilt = 0, fluid = false, children }) {
   const half = size / 2
   const outer = half * 0.98
   const steps = lobes * 16
@@ -16,8 +17,11 @@ export default function Scallop({ size, color, lobes = 12, depth = 0.18, tilt = 
   }
 
   return (
-    <div className="scallop" style={{ width: size, height: size, transform: `rotate(${tilt}deg)` }}>
-      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} aria-hidden="true">
+    <div
+      className="scallop"
+      style={{ width: fluid ? '100%' : size, height: fluid ? '100%' : size, transform: `rotate(${tilt}deg)` }}
+    >
+      <svg width="100%" height="100%" viewBox={`0 0 ${size} ${size}`} aria-hidden="true">
         <path d={`M${points.join(' L')} Z`} fill={color} />
       </svg>
       <div className="scallop-content">{children}</div>

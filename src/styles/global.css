@@ -141,6 +141,10 @@ button {
   font-weight: 600;
 }
 
+.big-button:disabled {
+  opacity: 0.35;
+}
+
 .big-button.is-light {
   background: var(--white);
   color: var(--ink);
@@ -236,6 +240,58 @@ button {
   gap: 6px;
   margin-top: auto;
   padding: 16px 20px calc(28px + env(safe-area-inset-bottom));
+}
+
+/* A sheet that slides up from the bottom over a dimmed screen. */
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(21, 21, 21, 0.45);
+}
+
+.sheet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: var(--app-width);
+  padding: 14px 20px calc(28px + env(safe-area-inset-bottom));
+  border-radius: 36px 36px 0 0;
+  background: var(--cream);
+  text-align: center;
+}
+
+.sheet-handle {
+  width: 44px;
+  height: 5px;
+  border-radius: var(--radius-pill);
+  background: rgba(21, 21, 21, 0.2);
+}
+
+.sheet-text {
+  color: var(--ink-muted);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.sheet-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  padding-top: 4px;
+}
+
+/* Left-aligned version, for sheets with choices in them. */
+.sheet.is-left {
+  align-items: stretch;
+  text-align: left;
 }
 
 .place {
