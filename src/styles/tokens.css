@@ -1,0 +1,20 @@
+/* Colours, font and sizes from docs/gg_Main flows.html. Change them here only. */
+:root {
+  --yellow: #f7d96b;
+  --pink: #f3a9cf;
+  --cream: #f5efe3;
+  --blue: #bacbf0;
+  --sage: #b5c98f;
+  --peach: #f8c29a;
+  --white: #ffffff;
+  --ink: #151515;
+  --ink-muted: rgba(21, 21, 21, 0.72);
+  --magenta: #b8407f;
+
+  --font: 'Urbanist', 'Avenir Next', system-ui, sans-serif;
+  --radius-card: 26px;
+  --radius-panel: 30px;
+  --radius-pill: 999px;
+  --touch: 44px;
+  --app-width: 480px;
+}

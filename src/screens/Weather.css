@@ -1,0 +1,143 @@
+.week {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 2px;
+  margin: 18px 20px 0;
+  padding: 16px 10px;
+  border-radius: var(--radius-panel);
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.week-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.week-day-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 44px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.week-day-name.is-today {
+  background: var(--magenta);
+  color: var(--white);
+}
+
+.week-day-name.is-frost {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.week-temp {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.week-rain {
+  color: var(--ink-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.frost-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 20px 0;
+  padding: 12px 14px 12px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--white);
+}
+
+.frost-pill-disc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+.frost-pill-text {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 1px;
+}
+
+.frost-pill-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.frost-pill-detail {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.watering {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 20px 0;
+}
+
+.watering h2 {
+  padding: 0 4px 4px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.watering-card {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  border-radius: var(--radius-card);
+  background: var(--white);
+}
+
+.watering-disc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+
+.watering-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.watering-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.watering-text p {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+}

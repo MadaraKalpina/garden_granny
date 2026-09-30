@@ -1,0 +1,51 @@
+/* Floating black pill, always at the bottom of the phone. */
+.bottom-bar {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+  max-width: var(--app-width);
+  padding: 14px 20px calc(24px + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.bottom-bar-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 68px;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  pointer-events: auto;
+}
+
+.bottom-bar-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 84px;
+  height: 56px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.bottom-bar-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+/* react-router adds "active" to the tab for the current screen. */
+.bottom-bar-tab.active {
+  color: var(--white);
+}
+
+.bottom-bar-tab.active .bottom-bar-dot {
+  background: var(--yellow);
+}

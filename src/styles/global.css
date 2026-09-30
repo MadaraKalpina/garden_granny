@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* One phone-width column, centred on bigger displays. */
+.screen {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--app-width);
+  min-height: 100dvh;
+  margin: 0 auto;
+  /* Room for the floating bottom bar. */
+  padding-bottom: calc(120px + env(safe-area-inset-bottom));
+}
+
+.screen-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 58px;
+  padding: 14px 20px 0;
+}
+
+.screen-top-side {
+  display: flex;
+  width: var(--touch);
+}
+
+.screen-top-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.heading {
+  padding: 22px 24px 0;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+}
+
+.heading-second {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.round-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--touch);
+  height: var(--touch);
+  padding: 0;
+  border: 1.5px solid rgba(21, 21, 21, 0.16);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.pill-button {
+  flex-shrink: 0;
+  height: var(--touch);
+  padding: 0 16px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.place {
+  font-size: 13px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.muted {
+  color: var(--ink-muted);
+}
